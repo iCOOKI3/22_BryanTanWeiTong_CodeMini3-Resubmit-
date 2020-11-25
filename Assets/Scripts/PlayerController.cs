@@ -83,23 +83,24 @@ public class PlayerController : MonoBehaviour
             print("You Lose!");
             SceneManager.LoadScene("LoseScene");
         }
-        //UI indicating timer
+        //UI indicating timer to start counting from 0 secs
         if (fTimerCount < 10 && isTimerStart)
         {
             fTimerCount += Time.deltaTime;
             iCount = Mathf.RoundToInt(fTimerCount);
             Timer.GetComponent<Text>().text = "Timer Countup: " + iCount.ToString();
         }
+        //Plane B to move back after 10secs
         else if (fTimerCount >= 10 && isTimerStart)
         {
             fTimerCount = 0;
             iCount = 0;
             isTimerStart = false;
             Timer.GetComponent<Text>().text = "Timer Countup: " + iCount.ToString();
-            PlayPlaneB.GetComponent<Transform>().Rotate(0,90,0);
+            PlayPlaneB.GetComponent<Transform>().Rotate(0, 90, 0);
         }
-        
-        
+
+
     }
 
     //Animation for run and idle
