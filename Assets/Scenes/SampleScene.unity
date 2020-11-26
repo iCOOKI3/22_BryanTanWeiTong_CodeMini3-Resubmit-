@@ -328,7 +328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: 114}
+  m_AnchoredPosition: {x: -359, y: 189}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &134358635
@@ -698,6 +698,7 @@ GameObject:
   - component: {fileID: 441781882}
   - component: {fileID: 441781881}
   - component: {fileID: 441781885}
+  - component: {fileID: 441781886}
   m_Layer: 0
   m_Name: MovingPlane
   m_TagString: Untagged
@@ -793,6 +794,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGO: {fileID: 1525224732}
+--- !u!65 &441781886
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441781880}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &510286439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,7 +1523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179.9, y: 133}
+  m_AnchoredPosition: {x: -358, y: 221}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1000553669
@@ -1743,7 +1757,7 @@ GameObject:
   - component: {fileID: 1378441161}
   m_Layer: 0
   m_Name: PlayPlaneD
-  m_TagString: Untagged
+  m_TagString: FinalPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

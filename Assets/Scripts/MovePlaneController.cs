@@ -53,11 +53,17 @@ public class MovePlaneController : MonoBehaviour
     }
 
     //Let player stay on moivng plane
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player"))
         {
-            playerGO.transform.SetParent(transform);
+            playerGO.transform.parent = transform;
         }
+    }
+
+    //Let player stay on final platform
+    private void OnTriggerExit(Collider other)
+    {
+            playerGO.transform.parent = null;
     }
 }
