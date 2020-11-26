@@ -577,6 +577,12 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 9912982f83736684bacfb5b789b6acb0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dc7b382d25903545b405802eb2198ab, type: 3}
+--- !u!1 &321696820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100014, guid: 2dc7b382d25903545b405802eb2198ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 275758752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330029982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,7 +1857,7 @@ GameObject:
   - component: {fileID: 1523814309}
   m_Layer: 0
   m_Name: PlayPlaneA
-  m_TagString: Untagged
+  m_TagString: GamePlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2041,6 +2047,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnim: {fileID: 902615504}
   PlayPlaneB: {fileID: 510286439}
+  playerModelGO:
+  - {fileID: 1872683195}
+  - {fileID: 321696820}
   Timer: {fileID: 1000553667}
   Coin: {fileID: 1307242060}
   CoinCollected: {fileID: 134358633}
@@ -2061,3 +2070,9 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!1 &1872683195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100008, guid: 2dc7b382d25903545b405802eb2198ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 275758752}
+  m_PrefabAsset: {fileID: 0}

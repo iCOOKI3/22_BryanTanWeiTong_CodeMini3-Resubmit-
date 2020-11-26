@@ -11,9 +11,12 @@ public class PlayerController : MonoBehaviour
 
     public GameObject PlayPlaneB;
 
+    public GameObject[] playerModelGO;
+
     public GameObject Timer;
 
     public GameObject Coin;
+
     public GameObject CoinCollected;
 
     private int coinLeft; //total number of coin collected
@@ -21,17 +24,25 @@ public class PlayerController : MonoBehaviour
 
     float moveSpeed = 10.0f;
 
+    float jumpSpeed = 5.0f;
+
     float fTimerCount;
 
     float iCount;
 
     bool isTimerStart = false;
+
+    bool isOnGround = true;
+
     public bool isHitBox = false;
 
     // Start is called before the first frame update
     void Start()
     {
         totalCoin = GameObject.FindGameObjectsWithTag("Coin").Length;
+
+        playerModelGO[0].GetComponent<Renderer>().material.color = Color.red;
+        playerModelGO[1].GetComponent<Renderer>().material.color = Color.red;
     }
 
     // Update is called once per frame
@@ -77,8 +88,19 @@ public class PlayerController : MonoBehaviour
         {
             playerAnim.SetBool("isRun", false);
         }
+        //Jump
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        {
+            playerAnim.SetTrigger("trigJump");
+            transform.Translate(Vector3.up * Time.deltaTime * jumpSpeed);
+
+            Debug.Log("OFF GROUND");
+            playerModelGO[0].GetComponent<Renderer>().material.color = Color.blue;
+            playerModelGO[1].GetComponent<Renderer>().material.color = Color.blue;
+            isOnGround = false;
+        }
         //Losing Condition
-        if(transform.position.y < -5)
+        if (transform.position.y < -5)
         {
             print("You Lose!");
             SceneManager.LoadScene("LoseScene");
@@ -99,8 +121,6 @@ public class PlayerController : MonoBehaviour
             Timer.GetComponent<Text>().text = "Timer Countup: " + iCount.ToString();
             PlayPlaneB.GetComponent<Transform>().Rotate(0, 90, 0);
         }
-
-
     }
 
     //Animation for run and idle
@@ -148,6 +168,13 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Collided with Box!");
             isHitBox = true;
+        }
+
+        if(collision.gameObject.CompareTag("GamePlane"))
+        {
+            playerModelGO[0].GetComponent<Renderer>().material.color = Color.red;
+            playerModelGO[1].GetComponent<Renderer>().material.color = Color.red;
+            isOnGround = true;
         }
     }
 }
